@@ -12,9 +12,14 @@
 	  {% endif %}
 	{% endwith %}
 </p>
+{% if text_ocr %} 
+	<div> 
+		<p>OCR Read: {{ text_ocr }}</p>
+	</div>
+{% endif %}
 {% if text %}
 	<div>
-		<p>{{ text }}</p>
+		<p>Question: {{ text }}</p>
 	</div>
 {% endif %}
 <form method="post" action="/" enctype="multipart/form-data">
