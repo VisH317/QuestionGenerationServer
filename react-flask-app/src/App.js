@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
 
 function App() {
+  const [data, setData] = useState([{}])
+
+  useEffect(() => {
+    fetch("/process").then(
+      res => res.json()
+    ).then(
+      data => {
+        setData(data)
+        console.log(data)
+      }
+    )
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+
+    <form method="post" action="/process" enctype="multipart/form-data">
+      <dl>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <input type="file" name="file" autocomplete="off" required></input>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      </dl>
+      <p>
+        <input type="submit" value="Submit"></input>
+      </p>
+    </form>
+  )
 }
 
-export default App;
+export default App

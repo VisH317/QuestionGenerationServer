@@ -1,10 +1,8 @@
 from flask import render_template
-import transformers
 from transformers import TrOCRProcessor, VisionEncoderDecoderModel, AutoModelForSeq2SeqLM, AutoTokenizer, AutoModel, VisionEncoderDecoderConfig
 import os
 from flask import Flask, flash, request, redirect, url_for, render_template, Blueprint
 from werkzeug.utils import secure_filename
-from matplotlib.pyplot import imread
 from PIL import Image
 import torch
 import logging
@@ -31,7 +29,6 @@ def OCR(filename):
     linebreak_idx = [0]
     check_margin_end = False
     passage = []
-    print(f"horiz list: {horiz_hist}")
     for ix,sum in enumerate(horiz_hist):
         if sum <= 800 and check_margin_end == False:
             linebreak_idx.append(ix)
@@ -58,11 +55,11 @@ def generateQuestions(text):
     outputs = modelQuestion.generate(input_ids)
     return str(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
-@Routes.route('/')
+@Routes.route('/process')
 def upload_form():
-    return render_template('base.html')
+    return {"question" : "", "OCR_output" : "", "error" : ""}
 
-@Routes.route('/', methods=['POST'])
+@Routes.route('/process', methods=['POST'])
 def upload_image():
     from app import app
     if 'file' not in request.files:
@@ -79,7 +76,7 @@ def upload_image():
         flash("Image uploaded")
         OCR_output = OCR(filename)
         questions = generateQuestions(OCR_output)
-        return render_template('base.html', text=questions, text_ocr=OCR_output)
+        return {"question" : questions, "OCR_output" : OCR_output, "error" : ""}
 
 # @Routes.route('/display/<filename>')
 # def display_image(filename):

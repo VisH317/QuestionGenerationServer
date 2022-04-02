@@ -2,10 +2,10 @@ import os
 from flask import Flask
 from routes import Routes
 
-app = Flask(__name__, instance_relative_config=True)
+app = Flask(__name__, instance_relative_config=True, static_url_path="", static_folder="../react-flask-app/build")
 app.config.from_mapping(
     SECRET_KEY='dev',
-    DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
+    DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite')
 )
 
 app.config['UPLOAD_FOLDER'] = 'static/'
@@ -22,7 +22,3 @@ app.register_blueprint(Routes)
 #     os.makedirs(app.instance_path)
 # except OSError:
 #     pass
-
-@app.route("/hello")
-def hello():
-    return 'Hello, World!'
