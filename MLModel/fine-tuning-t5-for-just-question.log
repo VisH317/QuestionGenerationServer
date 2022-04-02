@@ -1,0 +1,289 @@
+[{"stream_name":"stderr","time":11.108168619,"data":"/opt/conda/lib/python3.7/site-packages/papermill/iorw.py:50: FutureWarning: pyarrow.HadoopFileSystem is deprecated as of 2.0.0, please use pyarrow.fs.HadoopFileSystem instead.\n"}
+,{"stream_name":"stderr","time":11.108207056,"data":"  from pyarrow import HadoopFileSystem\n"}
+,{"stream_name":"stdout","time":24.731187075,"data":"Downloading and preparing dataset sciq/default (download: 2.69 MiB, generated: 7.32 MiB, post-processed: Unknown size, total: 10.01 MiB) to /root/.cache/huggingface/datasets/sciq/default/0.1.0/50e5c6e3795b55463819d399ec417bfd4c3c621105e00295ddb5f3633d708493...\n"}
+,{"stream_name":"stdout","time":26.589529275,"data":"Dataset sciq downloaded and prepared to /root/.cache/huggingface/datasets/sciq/default/0.1.0/50e5c6e3795b55463819d399ec417bfd4c3c621105e00295ddb5f3633d708493. Subsequent calls will reuse this data.\n"}
+,{"stream_name":"stdout","time":39.544995386,"data":"Dataset({\n"}
+,{"stream_name":"stdout","time":39.545908605,"data":"    features: ['question', 'support', 'input_ids', 'attention_mask', 'labels'],\n"}
+,{"stream_name":"stdout","time":39.545924039,"data":"    num_rows: 11679\n"}
+,{"stream_name":"stdout","time":39.545929738,"data":"})\n"}
+,{"stream_name":"stdout","time":39.545934986,"data":"\u003cclass 'datasets.arrow_dataset.Dataset'\u003e\n"}
+,{"stream_name":"stderr","time":42.152873373,"data":"Using the `WAND_DISABLED` environment variable is deprecated and will be removed in v5. Use the --report_to flag to control the integrations used for logging result (for instance --report_to none).\n"}
+,{"stream_name":"stderr","time":47.079350881,"data":"Using amp half precision backend\n"}
+,{"stream_name":"stderr","time":47.083026005,"data":"The following columns in the training set  don't have a corresponding argument in `T5ForConditionalGeneration.forward` and have been ignored: support, question.\n"}
+,{"stream_name":"stderr","time":47.110065908,"data":"/opt/conda/lib/python3.7/site-packages/transformers/optimization.py:309: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use thePyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning\n"}
+,{"stream_name":"stderr","time":47.110089413,"data":"  FutureWarning,\n"}
+,{"stream_name":"stderr","time":47.110095858,"data":"***** Running training *****\n"}
+,{"stream_name":"stderr","time":47.111895827,"data":"  Num examples = 11679\n"}
+,{"stream_name":"stderr","time":47.113710662,"data":"  Num Epochs = 15\n"}
+,{"stream_name":"stderr","time":47.115293815,"data":"  Instantaneous batch size per device = 1\n"}
+,{"stream_name":"stderr","time":47.11681259,"data":"  Total train batch size (w. parallel, distributed \u0026 accumulation) = 10\n"}
+,{"stream_name":"stderr","time":47.118375896,"data":"  Gradient Accumulation steps = 10\n"}
+,{"stream_name":"stderr","time":47.119932212,"data":"  Total optimization steps = 17505\n"}
+,{"stream_name":"stderr","time":48.579757218,"data":"/opt/conda/lib/python3.7/site-packages/transformers/trainer.py:1410: FutureWarning: Non-finite norm encountered in torch.nn.utils.clip_grad_norm_; continuing anyway. Note that the default behavior will change in a future release to error out if a non-finite total norm is encountered. At that point, setting error_if_nonfinite=false will be required to retain the old behavior.\n"}
+,{"stream_name":"stderr","time":48.579801702,"data":"  args.max_grad_norm,\n"}
+,{"stream_name":"stderr","time":287.221038261,"data":"Saving model checkpoint to ./results/checkpoint-500\n"}
+,{"stream_name":"stderr","time":287.224105466,"data":"Configuration saved in ./results/checkpoint-500/config.json\n"}
+,{"stream_name":"stderr","time":287.633922563,"data":"Model weights saved in ./results/checkpoint-500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":287.637149916,"data":"tokenizer config file saved in ./results/checkpoint-500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":287.677998282,"data":"Special tokens file saved in ./results/checkpoint-500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":287.682363828,"data":"Copy vocab file to ./results/checkpoint-500/spiece.model\n"}
+,{"stream_name":"stderr","time":528.339803451,"data":"Saving model checkpoint to ./results/checkpoint-1000\n"}
+,{"stream_name":"stderr","time":528.342475176,"data":"Configuration saved in ./results/checkpoint-1000/config.json\n"}
+,{"stream_name":"stderr","time":528.771374429,"data":"Model weights saved in ./results/checkpoint-1000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":528.774168367,"data":"tokenizer config file saved in ./results/checkpoint-1000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":528.776167517,"data":"Special tokens file saved in ./results/checkpoint-1000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":528.826194249,"data":"Copy vocab file to ./results/checkpoint-1000/spiece.model\n"}
+,{"stream_name":"stderr","time":768.947455124,"data":"Saving model checkpoint to ./results/checkpoint-1500\n"}
+,{"stream_name":"stderr","time":768.94988865,"data":"Configuration saved in ./results/checkpoint-1500/config.json\n"}
+,{"stream_name":"stderr","time":769.357386236,"data":"Model weights saved in ./results/checkpoint-1500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":769.359438869,"data":"tokenizer config file saved in ./results/checkpoint-1500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":769.401550761,"data":"Special tokens file saved in ./results/checkpoint-1500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":769.414360351,"data":"Copy vocab file to ./results/checkpoint-1500/spiece.model\n"}
+,{"stream_name":"stderr","time":844.770832391,"data":"/opt/conda/lib/python3.7/site-packages/transformers/trainer.py:1410: FutureWarning: Non-finite norm encountered in torch.nn.utils.clip_grad_norm_; continuing anyway. Note that the default behavior will change in a future release to error out if a non-finite total norm is encountered. At that point, setting error_if_nonfinite=false will be required to retain the old behavior.\n"}
+,{"stream_name":"stderr","time":844.770887806,"data":"  args.max_grad_norm,\n"}
+,{"stream_name":"stderr","time":1010.479326937,"data":"Saving model checkpoint to ./results/checkpoint-2000\n"}
+,{"stream_name":"stderr","time":1010.481655278,"data":"Configuration saved in ./results/checkpoint-2000/config.json\n"}
+,{"stream_name":"stderr","time":1010.892128862,"data":"Model weights saved in ./results/checkpoint-2000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":1010.894967015,"data":"tokenizer config file saved in ./results/checkpoint-2000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":1010.936107534,"data":"Special tokens file saved in ./results/checkpoint-2000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":1010.949686031,"data":"Copy vocab file to ./results/checkpoint-2000/spiece.model\n"}
+,{"stream_name":"stderr","time":1250.693787883,"data":"Saving model checkpoint to ./results/checkpoint-2500\n"}
+,{"stream_name":"stderr","time":1250.693832959,"data":"Configuration saved in ./results/checkpoint-2500/config.json\n"}
+,{"stream_name":"stderr","time":1251.099300771,"data":"Model weights saved in ./results/checkpoint-2500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":1251.101562457,"data":"tokenizer config file saved in ./results/checkpoint-2500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":1251.142780888,"data":"Special tokens file saved in ./results/checkpoint-2500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":1251.156113659,"data":"Copy vocab file to ./results/checkpoint-2500/spiece.model\n"}
+,{"stream_name":"stderr","time":1490.614194768,"data":"Saving model checkpoint to ./results/checkpoint-3000\n"}
+,{"stream_name":"stderr","time":1490.617194824,"data":"Configuration saved in ./results/checkpoint-3000/config.json\n"}
+,{"stream_name":"stderr","time":1491.04504518,"data":"Model weights saved in ./results/checkpoint-3000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":1491.04738679,"data":"tokenizer config file saved in ./results/checkpoint-3000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":1491.049313326,"data":"Special tokens file saved in ./results/checkpoint-3000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":1491.098044097,"data":"Copy vocab file to ./results/checkpoint-3000/spiece.model\n"}
+,{"stream_name":"stderr","time":1491.993455292,"data":"Deleting older checkpoint [results/checkpoint-500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":1732.854892473,"data":"Saving model checkpoint to ./results/checkpoint-3500\n"}
+,{"stream_name":"stderr","time":1732.858095045,"data":"Configuration saved in ./results/checkpoint-3500/config.json\n"}
+,{"stream_name":"stderr","time":1733.302508548,"data":"Model weights saved in ./results/checkpoint-3500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":1733.304349676,"data":"tokenizer config file saved in ./results/checkpoint-3500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":1733.305745469,"data":"Special tokens file saved in ./results/checkpoint-3500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":1733.357624738,"data":"Copy vocab file to ./results/checkpoint-3500/spiece.model\n"}
+,{"stream_name":"stderr","time":1734.198365771,"data":"Deleting older checkpoint [results/checkpoint-1000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":1974.14718546,"data":"Saving model checkpoint to ./results/checkpoint-4000\n"}
+,{"stream_name":"stderr","time":1974.149953247,"data":"Configuration saved in ./results/checkpoint-4000/config.json\n"}
+,{"stream_name":"stderr","time":1974.572843604,"data":"Model weights saved in ./results/checkpoint-4000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":1974.575610977,"data":"tokenizer config file saved in ./results/checkpoint-4000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":1974.577509273,"data":"Special tokens file saved in ./results/checkpoint-4000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":1974.626701726,"data":"Copy vocab file to ./results/checkpoint-4000/spiece.model\n"}
+,{"stream_name":"stderr","time":1975.483568863,"data":"Deleting older checkpoint [results/checkpoint-1500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":2214.493720462,"data":"Saving model checkpoint to ./results/checkpoint-4500\n"}
+,{"stream_name":"stderr","time":2214.4968791,"data":"Configuration saved in ./results/checkpoint-4500/config.json\n"}
+,{"stream_name":"stderr","time":2214.915112721,"data":"Model weights saved in ./results/checkpoint-4500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":2214.916870617,"data":"tokenizer config file saved in ./results/checkpoint-4500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":2214.91837574,"data":"Special tokens file saved in ./results/checkpoint-4500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":2214.972212585,"data":"Copy vocab file to ./results/checkpoint-4500/spiece.model\n"}
+,{"stream_name":"stderr","time":2215.827265874,"data":"Deleting older checkpoint [results/checkpoint-2000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":2456.016560343,"data":"Saving model checkpoint to ./results/checkpoint-5000\n"}
+,{"stream_name":"stderr","time":2456.019598072,"data":"Configuration saved in ./results/checkpoint-5000/config.json\n"}
+,{"stream_name":"stderr","time":2456.444807686,"data":"Model weights saved in ./results/checkpoint-5000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":2456.447121792,"data":"tokenizer config file saved in ./results/checkpoint-5000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":2456.490099384,"data":"Special tokens file saved in ./results/checkpoint-5000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":2456.502857152,"data":"Copy vocab file to ./results/checkpoint-5000/spiece.model\n"}
+,{"stream_name":"stderr","time":2457.340930185,"data":"Deleting older checkpoint [results/checkpoint-2500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":2697.833522647,"data":"Saving model checkpoint to ./results/checkpoint-5500\n"}
+,{"stream_name":"stderr","time":2697.835653483,"data":"Configuration saved in ./results/checkpoint-5500/config.json\n"}
+,{"stream_name":"stderr","time":2698.25797298,"data":"Model weights saved in ./results/checkpoint-5500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":2698.259580891,"data":"tokenizer config file saved in ./results/checkpoint-5500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":2698.260941964,"data":"Special tokens file saved in ./results/checkpoint-5500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":2698.314646475,"data":"Copy vocab file to ./results/checkpoint-5500/spiece.model\n"}
+,{"stream_name":"stderr","time":2699.152204261,"data":"Deleting older checkpoint [results/checkpoint-3000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":2794.135717567,"data":"/opt/conda/lib/python3.7/site-packages/transformers/trainer.py:1410: FutureWarning: Non-finite norm encountered in torch.nn.utils.clip_grad_norm_; continuing anyway. Note that the default behavior will change in a future release to error out if a non-finite total norm is encountered. At that point, setting error_if_nonfinite=false will be required to retain the old behavior.\n"}
+,{"stream_name":"stderr","time":2794.135765515,"data":"  args.max_grad_norm,\n"}
+,{"stream_name":"stderr","time":2939.29712149,"data":"Saving model checkpoint to ./results/checkpoint-6000\n"}
+,{"stream_name":"stderr","time":2939.300066693,"data":"Configuration saved in ./results/checkpoint-6000/config.json\n"}
+,{"stream_name":"stderr","time":2939.720874164,"data":"Model weights saved in ./results/checkpoint-6000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":2939.723344607,"data":"tokenizer config file saved in ./results/checkpoint-6000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":2939.765366365,"data":"Special tokens file saved in ./results/checkpoint-6000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":2939.77791286,"data":"Copy vocab file to ./results/checkpoint-6000/spiece.model\n"}
+,{"stream_name":"stderr","time":2940.629291369,"data":"Deleting older checkpoint [results/checkpoint-3500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":3180.32833477,"data":"Saving model checkpoint to ./results/checkpoint-6500\n"}
+,{"stream_name":"stderr","time":3180.331485529,"data":"Configuration saved in ./results/checkpoint-6500/config.json\n"}
+,{"stream_name":"stderr","time":3180.792898189,"data":"Model weights saved in ./results/checkpoint-6500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":3180.79539789,"data":"tokenizer config file saved in ./results/checkpoint-6500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":3180.802381354,"data":"Special tokens file saved in ./results/checkpoint-6500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":3180.861204051,"data":"Copy vocab file to ./results/checkpoint-6500/spiece.model\n"}
+,{"stream_name":"stderr","time":3181.862444985,"data":"Deleting older checkpoint [results/checkpoint-4000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":3422.271572571,"data":"Saving model checkpoint to ./results/checkpoint-7000\n"}
+,{"stream_name":"stderr","time":3422.274025639,"data":"Configuration saved in ./results/checkpoint-7000/config.json\n"}
+,{"stream_name":"stderr","time":3422.706516761,"data":"Model weights saved in ./results/checkpoint-7000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":3422.713003867,"data":"tokenizer config file saved in ./results/checkpoint-7000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":3422.713055704,"data":"Special tokens file saved in ./results/checkpoint-7000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":3422.805507362,"data":"Copy vocab file to ./results/checkpoint-7000/spiece.model\n"}
+,{"stream_name":"stderr","time":3423.791119085,"data":"Deleting older checkpoint [results/checkpoint-4500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":3663.500614494,"data":"Saving model checkpoint to ./results/checkpoint-7500\n"}
+,{"stream_name":"stderr","time":3663.502947362,"data":"Configuration saved in ./results/checkpoint-7500/config.json\n"}
+,{"stream_name":"stderr","time":3663.934940331,"data":"Model weights saved in ./results/checkpoint-7500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":3663.936524791,"data":"tokenizer config file saved in ./results/checkpoint-7500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":3663.937826638,"data":"Special tokens file saved in ./results/checkpoint-7500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":3663.989121317,"data":"Copy vocab file to ./results/checkpoint-7500/spiece.model\n"}
+,{"stream_name":"stderr","time":3664.90864483,"data":"Deleting older checkpoint [results/checkpoint-5000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":3904.293175127,"data":"Saving model checkpoint to ./results/checkpoint-8000\n"}
+,{"stream_name":"stderr","time":3904.295927954,"data":"Configuration saved in ./results/checkpoint-8000/config.json\n"}
+,{"stream_name":"stderr","time":3904.716079415,"data":"Model weights saved in ./results/checkpoint-8000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":3904.718855598,"data":"tokenizer config file saved in ./results/checkpoint-8000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":3904.720657032,"data":"Special tokens file saved in ./results/checkpoint-8000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":3904.77118484,"data":"Copy vocab file to ./results/checkpoint-8000/spiece.model\n"}
+,{"stream_name":"stderr","time":3905.63841883,"data":"Deleting older checkpoint [results/checkpoint-5500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":4146.847774448,"data":"Saving model checkpoint to ./results/checkpoint-8500\n"}
+,{"stream_name":"stderr","time":4146.850011154,"data":"Configuration saved in ./results/checkpoint-8500/config.json\n"}
+,{"stream_name":"stderr","time":4147.267204887,"data":"Model weights saved in ./results/checkpoint-8500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":4147.269726212,"data":"tokenizer config file saved in ./results/checkpoint-8500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":4147.271652088,"data":"Special tokens file saved in ./results/checkpoint-8500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":4147.310675145,"data":"Copy vocab file to ./results/checkpoint-8500/spiece.model\n"}
+,{"stream_name":"stderr","time":4148.493282602,"data":"Deleting older checkpoint [results/checkpoint-6000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":4388.256740863,"data":"Saving model checkpoint to ./results/checkpoint-9000\n"}
+,{"stream_name":"stderr","time":4388.259937431,"data":"Configuration saved in ./results/checkpoint-9000/config.json\n"}
+,{"stream_name":"stderr","time":4388.691875337,"data":"Model weights saved in ./results/checkpoint-9000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":4388.695262806,"data":"tokenizer config file saved in ./results/checkpoint-9000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":4388.731276343,"data":"Special tokens file saved in ./results/checkpoint-9000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":4388.750518853,"data":"Copy vocab file to ./results/checkpoint-9000/spiece.model\n"}
+,{"stream_name":"stderr","time":4389.600021015,"data":"Deleting older checkpoint [results/checkpoint-6500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":4630.649636043,"data":"Saving model checkpoint to ./results/checkpoint-9500\n"}
+,{"stream_name":"stderr","time":4630.65226775,"data":"Configuration saved in ./results/checkpoint-9500/config.json\n"}
+,{"stream_name":"stderr","time":4631.088758167,"data":"Model weights saved in ./results/checkpoint-9500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":4631.091088753,"data":"tokenizer config file saved in ./results/checkpoint-9500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":4631.092633576,"data":"Special tokens file saved in ./results/checkpoint-9500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":4631.143744049,"data":"Copy vocab file to ./results/checkpoint-9500/spiece.model\n"}
+,{"stream_name":"stderr","time":4632.002598523,"data":"Deleting older checkpoint [results/checkpoint-7000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":4736.025538753,"data":"/opt/conda/lib/python3.7/site-packages/transformers/trainer.py:1410: FutureWarning: Non-finite norm encountered in torch.nn.utils.clip_grad_norm_; continuing anyway. Note that the default behavior will change in a future release to error out if a non-finite total norm is encountered. At that point, setting error_if_nonfinite=false will be required to retain the old behavior.\n"}
+,{"stream_name":"stderr","time":4736.025595149,"data":"  args.max_grad_norm,\n"}
+,{"stream_name":"stderr","time":4873.710974947,"data":"Saving model checkpoint to ./results/checkpoint-10000\n"}
+,{"stream_name":"stderr","time":4873.713363073,"data":"Configuration saved in ./results/checkpoint-10000/config.json\n"}
+,{"stream_name":"stderr","time":4874.136365025,"data":"Model weights saved in ./results/checkpoint-10000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":4874.138154799,"data":"tokenizer config file saved in ./results/checkpoint-10000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":4874.13968092,"data":"Special tokens file saved in ./results/checkpoint-10000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":4874.190583654,"data":"Copy vocab file to ./results/checkpoint-10000/spiece.model\n"}
+,{"stream_name":"stderr","time":4875.1863817,"data":"Deleting older checkpoint [results/checkpoint-7500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":5116.261896717,"data":"Saving model checkpoint to ./results/checkpoint-10500\n"}
+,{"stream_name":"stderr","time":5116.264947712,"data":"Configuration saved in ./results/checkpoint-10500/config.json\n"}
+,{"stream_name":"stderr","time":5116.703509114,"data":"Model weights saved in ./results/checkpoint-10500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":5116.70355421,"data":"tokenizer config file saved in ./results/checkpoint-10500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":5116.703566452,"data":"Special tokens file saved in ./results/checkpoint-10500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":5116.772493826,"data":"Copy vocab file to ./results/checkpoint-10500/spiece.model\n"}
+,{"stream_name":"stderr","time":5117.776208817,"data":"Deleting older checkpoint [results/checkpoint-8000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":5360.002363874,"data":"Saving model checkpoint to ./results/checkpoint-11000\n"}
+,{"stream_name":"stderr","time":5360.004619287,"data":"Configuration saved in ./results/checkpoint-11000/config.json\n"}
+,{"stream_name":"stderr","time":5360.422306428,"data":"Model weights saved in ./results/checkpoint-11000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":5360.424888234,"data":"tokenizer config file saved in ./results/checkpoint-11000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":5360.426839417,"data":"Special tokens file saved in ./results/checkpoint-11000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":5360.465486148,"data":"Copy vocab file to ./results/checkpoint-11000/spiece.model\n"}
+,{"stream_name":"stderr","time":5361.324765406,"data":"Deleting older checkpoint [results/checkpoint-8500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":5448.476591179,"data":"/opt/conda/lib/python3.7/site-packages/transformers/trainer.py:1410: FutureWarning: Non-finite norm encountered in torch.nn.utils.clip_grad_norm_; continuing anyway. Note that the default behavior will change in a future release to error out if a non-finite total norm is encountered. At that point, setting error_if_nonfinite=false will be required to retain the old behavior.\n"}
+,{"stream_name":"stderr","time":5448.476652782,"data":"  args.max_grad_norm,\n"}
+,{"stream_name":"stderr","time":5604.137154866,"data":"Saving model checkpoint to ./results/checkpoint-11500\n"}
+,{"stream_name":"stderr","time":5604.140628656,"data":"Configuration saved in ./results/checkpoint-11500/config.json\n"}
+,{"stream_name":"stderr","time":5604.564133013,"data":"Model weights saved in ./results/checkpoint-11500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":5604.566153283,"data":"tokenizer config file saved in ./results/checkpoint-11500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":5604.568386598,"data":"Special tokens file saved in ./results/checkpoint-11500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":5604.622390036,"data":"Copy vocab file to ./results/checkpoint-11500/spiece.model\n"}
+,{"stream_name":"stderr","time":5605.480782425,"data":"Deleting older checkpoint [results/checkpoint-9000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":5846.850546081,"data":"Saving model checkpoint to ./results/checkpoint-12000\n"}
+,{"stream_name":"stderr","time":5846.853422221,"data":"Configuration saved in ./results/checkpoint-12000/config.json\n"}
+,{"stream_name":"stderr","time":5847.296055302,"data":"Model weights saved in ./results/checkpoint-12000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":5847.297750211,"data":"tokenizer config file saved in ./results/checkpoint-12000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":5847.299169899,"data":"Special tokens file saved in ./results/checkpoint-12000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":5847.353282898,"data":"Copy vocab file to ./results/checkpoint-12000/spiece.model\n"}
+,{"stream_name":"stderr","time":5848.187155155,"data":"Deleting older checkpoint [results/checkpoint-9500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":6090.026552328,"data":"Saving model checkpoint to ./results/checkpoint-12500\n"}
+,{"stream_name":"stderr","time":6090.028847608,"data":"Configuration saved in ./results/checkpoint-12500/config.json\n"}
+,{"stream_name":"stderr","time":6090.448051804,"data":"Model weights saved in ./results/checkpoint-12500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":6090.450118102,"data":"tokenizer config file saved in ./results/checkpoint-12500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":6090.491312513,"data":"Special tokens file saved in ./results/checkpoint-12500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":6090.504661316,"data":"Copy vocab file to ./results/checkpoint-12500/spiece.model\n"}
+,{"stream_name":"stderr","time":6091.35245214,"data":"Deleting older checkpoint [results/checkpoint-10000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":6333.373417346,"data":"Saving model checkpoint to ./results/checkpoint-13000\n"}
+,{"stream_name":"stderr","time":6333.376741591,"data":"Configuration saved in ./results/checkpoint-13000/config.json\n"}
+,{"stream_name":"stderr","time":6333.812492702,"data":"Model weights saved in ./results/checkpoint-13000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":6333.815036763,"data":"tokenizer config file saved in ./results/checkpoint-13000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":6333.859811183,"data":"Special tokens file saved in ./results/checkpoint-13000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":6333.873388909,"data":"Copy vocab file to ./results/checkpoint-13000/spiece.model\n"}
+,{"stream_name":"stderr","time":6334.744330041,"data":"Deleting older checkpoint [results/checkpoint-10500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":6576.176642626,"data":"Saving model checkpoint to ./results/checkpoint-13500\n"}
+,{"stream_name":"stderr","time":6576.179207231,"data":"Configuration saved in ./results/checkpoint-13500/config.json\n"}
+,{"stream_name":"stderr","time":6576.600573638,"data":"Model weights saved in ./results/checkpoint-13500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":6576.602866785,"data":"tokenizer config file saved in ./results/checkpoint-13500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":6576.604732231,"data":"Special tokens file saved in ./results/checkpoint-13500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":6576.658044315,"data":"Copy vocab file to ./results/checkpoint-13500/spiece.model\n"}
+,{"stream_name":"stderr","time":6577.526837247,"data":"Deleting older checkpoint [results/checkpoint-11000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":6819.455505655,"data":"Saving model checkpoint to ./results/checkpoint-14000\n"}
+,{"stream_name":"stderr","time":6819.458045873,"data":"Configuration saved in ./results/checkpoint-14000/config.json\n"}
+,{"stream_name":"stderr","time":6819.88695049,"data":"Model weights saved in ./results/checkpoint-14000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":6819.888936067,"data":"tokenizer config file saved in ./results/checkpoint-14000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":6819.926916807,"data":"Special tokens file saved in ./results/checkpoint-14000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":6819.94689629,"data":"Copy vocab file to ./results/checkpoint-14000/spiece.model\n"}
+,{"stream_name":"stderr","time":6820.846967323,"data":"Deleting older checkpoint [results/checkpoint-11500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":7063.201817504,"data":"Saving model checkpoint to ./results/checkpoint-14500\n"}
+,{"stream_name":"stderr","time":7063.204467977,"data":"Configuration saved in ./results/checkpoint-14500/config.json\n"}
+,{"stream_name":"stderr","time":7063.629053155,"data":"Model weights saved in ./results/checkpoint-14500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":7063.631080595,"data":"tokenizer config file saved in ./results/checkpoint-14500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":7063.674107311,"data":"Special tokens file saved in ./results/checkpoint-14500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":7063.69085558,"data":"Copy vocab file to ./results/checkpoint-14500/spiece.model\n"}
+,{"stream_name":"stderr","time":7064.724515379,"data":"Deleting older checkpoint [results/checkpoint-12000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":7305.729649395,"data":"Saving model checkpoint to ./results/checkpoint-15000\n"}
+,{"stream_name":"stderr","time":7305.735159055,"data":"Configuration saved in ./results/checkpoint-15000/config.json\n"}
+,{"stream_name":"stderr","time":7306.336499508,"data":"Model weights saved in ./results/checkpoint-15000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":7306.338947734,"data":"tokenizer config file saved in ./results/checkpoint-15000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":7306.381166781,"data":"Special tokens file saved in ./results/checkpoint-15000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":7306.393463596,"data":"Copy vocab file to ./results/checkpoint-15000/spiece.model\n"}
+,{"stream_name":"stderr","time":7307.234137986,"data":"Deleting older checkpoint [results/checkpoint-12500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":7417.405612009,"data":"/opt/conda/lib/python3.7/site-packages/transformers/trainer.py:1410: FutureWarning: Non-finite norm encountered in torch.nn.utils.clip_grad_norm_; continuing anyway. Note that the default behavior will change in a future release to error out if a non-finite total norm is encountered. At that point, setting error_if_nonfinite=false will be required to retain the old behavior.\n"}
+,{"stream_name":"stderr","time":7417.405660474,"data":"  args.max_grad_norm,\n"}
+,{"stream_name":"stderr","time":7548.695768827,"data":"Saving model checkpoint to ./results/checkpoint-15500\n"}
+,{"stream_name":"stderr","time":7548.69920817,"data":"Configuration saved in ./results/checkpoint-15500/config.json\n"}
+,{"stream_name":"stderr","time":7549.125963056,"data":"Model weights saved in ./results/checkpoint-15500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":7549.128647802,"data":"tokenizer config file saved in ./results/checkpoint-15500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":7549.14815816,"data":"Special tokens file saved in ./results/checkpoint-15500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":7549.184338869,"data":"Copy vocab file to ./results/checkpoint-15500/spiece.model\n"}
+,{"stream_name":"stderr","time":7550.049677539,"data":"Deleting older checkpoint [results/checkpoint-13000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":7792.697630173,"data":"Saving model checkpoint to ./results/checkpoint-16000\n"}
+,{"stream_name":"stderr","time":7792.702081083,"data":"Configuration saved in ./results/checkpoint-16000/config.json\n"}
+,{"stream_name":"stderr","time":7793.131855321,"data":"Model weights saved in ./results/checkpoint-16000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":7793.134199816,"data":"tokenizer config file saved in ./results/checkpoint-16000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":7793.136097998,"data":"Special tokens file saved in ./results/checkpoint-16000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":7793.185036953,"data":"Copy vocab file to ./results/checkpoint-16000/spiece.model\n"}
+,{"stream_name":"stderr","time":7794.036572885,"data":"Deleting older checkpoint [results/checkpoint-13500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":8035.600340521,"data":"Saving model checkpoint to ./results/checkpoint-16500\n"}
+,{"stream_name":"stderr","time":8035.602365372,"data":"Configuration saved in ./results/checkpoint-16500/config.json\n"}
+,{"stream_name":"stderr","time":8036.025501475,"data":"Model weights saved in ./results/checkpoint-16500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":8036.027907002,"data":"tokenizer config file saved in ./results/checkpoint-16500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":8036.070798956,"data":"Special tokens file saved in ./results/checkpoint-16500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":8036.084552574,"data":"Copy vocab file to ./results/checkpoint-16500/spiece.model\n"}
+,{"stream_name":"stderr","time":8036.935513595,"data":"Deleting older checkpoint [results/checkpoint-14000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":8167.705692952,"data":"/opt/conda/lib/python3.7/site-packages/transformers/trainer.py:1410: FutureWarning: Non-finite norm encountered in torch.nn.utils.clip_grad_norm_; continuing anyway. Note that the default behavior will change in a future release to error out if a non-finite total norm is encountered. At that point, setting error_if_nonfinite=false will be required to retain the old behavior.\n"}
+,{"stream_name":"stderr","time":8167.705903199,"data":"  args.max_grad_norm,\n"}
+,{"stream_name":"stderr","time":8278.009020628,"data":"Saving model checkpoint to ./results/checkpoint-17000\n"}
+,{"stream_name":"stderr","time":8278.012755215,"data":"Configuration saved in ./results/checkpoint-17000/config.json\n"}
+,{"stream_name":"stderr","time":8278.450631838,"data":"Model weights saved in ./results/checkpoint-17000/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":8278.453421184,"data":"tokenizer config file saved in ./results/checkpoint-17000/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":8278.459912395,"data":"Special tokens file saved in ./results/checkpoint-17000/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":8278.509516133,"data":"Copy vocab file to ./results/checkpoint-17000/spiece.model\n"}
+,{"stream_name":"stderr","time":8279.354012249,"data":"Deleting older checkpoint [results/checkpoint-14500] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":8522.144358112,"data":"Saving model checkpoint to ./results/checkpoint-17500\n"}
+,{"stream_name":"stderr","time":8522.146872849,"data":"Configuration saved in ./results/checkpoint-17500/config.json\n"}
+,{"stream_name":"stderr","time":8522.56808529,"data":"Model weights saved in ./results/checkpoint-17500/pytorch_model.bin\n"}
+,{"stream_name":"stderr","time":8522.570172663,"data":"tokenizer config file saved in ./results/checkpoint-17500/tokenizer_config.json\n"}
+,{"stream_name":"stderr","time":8522.571683112,"data":"Special tokens file saved in ./results/checkpoint-17500/special_tokens_map.json\n"}
+,{"stream_name":"stderr","time":8522.624062922,"data":"Copy vocab file to ./results/checkpoint-17500/spiece.model\n"}
+,{"stream_name":"stderr","time":8523.47563505,"data":"Deleting older checkpoint [results/checkpoint-15000] due to args.save_total_limit\n"}
+,{"stream_name":"stderr","time":8525.925496747,"data":"\n"}
+,{"stream_name":"stderr","time":8525.925532857,"data":"\n"}
+,{"stream_name":"stderr","time":8525.925540241,"data":"Training completed. Do not forget to share your model on huggingface.co/models =)\n"}
+,{"stream_name":"stderr","time":8525.925546189,"data":"\n"}
+,{"stream_name":"stderr","time":8525.925551454,"data":"\n"}
+,{"stream_name":"stderr","time":8532.662513784,"data":"/opt/conda/lib/python3.7/site-packages/traitlets/traitlets.py:2567: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":8532.662605013,"data":"  FutureWarning,\n"}
+,{"stream_name":"stderr","time":8532.662632103,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":8533.399008951,"data":"[NbConvertApp] Writing 187020 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":8535.448497692,"data":"/opt/conda/lib/python3.7/site-packages/traitlets/traitlets.py:2567: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":8535.448548584,"data":"  FutureWarning,\n"}
+,{"stream_name":"stderr","time":8535.448561326,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":8536.3537068,"data":"[NbConvertApp] Writing 428127 bytes to __results__.html\n"}
+]

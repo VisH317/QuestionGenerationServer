@@ -48,7 +48,7 @@ def OCR(filename):
     return " ".join(passage)
 
 def generateQuestions(text):
-    PATH = "./results/checkpoint-17500"
+    PATH = "../MLModel/results/main"
     tokenizer = AutoTokenizer.from_pretrained(PATH, local_files_only=True)
     modelQuestion = AutoModelForSeq2SeqLM.from_pretrained(PATH, local_files_only=True)
     input_ids = tokenizer(text, return_tensors="pt").input_ids
@@ -74,6 +74,8 @@ def upload_image():
         #return render_template('base.html', text=type(filename), text_ocr="OCR_output")
         file.save("./" + os.path.join(app.config['UPLOAD_FOLDER'], filename))
         flash("Image uploaded")
+        print("Running OCR:")
         OCR_output = OCR(filename)
+        print("Generating Questions:")
         questions = generateQuestions(OCR_output)
         return {"question" : questions, "OCR_output" : OCR_output, "error" : ""}
