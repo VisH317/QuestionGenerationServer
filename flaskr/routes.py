@@ -30,12 +30,12 @@ def OCR(filename):
     check_margin_end = False
     passage = []
     for ix,sum in enumerate(horiz_hist):
-        if sum <= 800 and check_margin_end == False:
+        if sum <= 3.13 and check_margin_end == False:
             linebreak_idx.append(ix)
             check_margin_end =  True
             # generated_ids = model.generate(pixel_values)
             # return processor.batch_decode(generated_ids, skip_special_tokens=True)[0]
-        if sum >= 800 and check_margin_end == True:
+        if sum >= 3.13 and check_margin_end == True:
             top_current = linebreak_idx.pop()
             lower = linebreak_idx[0]
             average = (ix+top_current)/2

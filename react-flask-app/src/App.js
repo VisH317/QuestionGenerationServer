@@ -1,45 +1,39 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+const { useState } = React
 
-function DataDisplay (props) {
-  const data = props.data
-  console.log("data")
-  if (typeof data.members === 'undefined') {
-    return (
-      <p>Loading...</p>
-    )
-  }
-  else {
-    return (
-      <div> 
-        <p> {data.members.length} members found</p>
-      </div>
-    )
-  }
+function getData (form) {
+  return fetch("/process", {
+    method: "POST",
+    body: form
+  }).then(res => res.json())
+}
+
+function DataShow (response) {
+  const json_response = response.json
+  return (
+    <div>
+      <p> Question: { json_response.question } </p>
+      <p> OCR_output: { json_response.OCR_output } </p>
+    </div>
+  )
 }
 
 function App() {
-  const [data, setData] = useState([{}])
+  const [response, setResponse] = useState([{}])
 
   function handleSubmit (e) {
     e.preventDefault();
-    // create form 
     const form = new FormData(e.target);
-    fetch("/process", {
-      method: "POST",
-      body: form
-    })
-    .then(res => res.json())
+    getData(form)
     .then(res => {
-      setData(res)
-      console.log(res)
+      console.log("Response:", res)
+      setResponse(res)
     });
   }
 
   return (
     <div>
-      <form method="post" action="/process" encType="multipart/form-data" onSubmit={
-        (e) => handleSubmit(e)
-      }>
+      <form method="post" action="/process" encType="multipart/form-data" onSubmit={handleSubmit}>
         <dl>
           <p>
             <input type="file" name="file" autoComplete="off" required></input>
@@ -49,7 +43,7 @@ function App() {
           <input type="submit" value="Submit"></input>
         </p>
       </form>
-      <DataDisplay data={data} />
+      <DataShow json={response} />
     </div>
   )
 }
