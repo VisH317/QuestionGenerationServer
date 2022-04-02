@@ -77,7 +77,3 @@ def upload_image():
         OCR_output = OCR(filename)
         questions = generateQuestions(OCR_output)
         return {"question" : questions, "OCR_output" : OCR_output, "error" : ""}
-
-# @Routes.route('/display/<filename>')
-# def display_image(filename):
-#     return redirect(url_for('static', filename='uploads/'+filename), code=301)
