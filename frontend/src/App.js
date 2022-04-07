@@ -1,20 +1,21 @@
 import "./App.css"
 import React from 'react'
+import Switch from './Switch'
 const { useState } = React
 
-function getData (form) {
+function getData(form) {
   return fetch("/process", {
     method: "POST",
     body: form
   }).then(res => res.json())
 }
 
-function DataShow (response) {
+function DataShow(response) {
   const json_response = response.json
   return (
     <div className="DataShow">
-      <p> Question: { json_response.question } </p>
-      <p> OCR_output: { json_response.OCR_output } </p>
+      <p> Question: {json_response.question} </p>
+      <p> OCR_output: {json_response.OCR_output} </p>
     </div>
   )
 }
@@ -22,31 +23,36 @@ function DataShow (response) {
 function App() {
   const [response, setResponse] = useState([{}])
 
-  function handleSubmit (e) {
+  function handleSubmit(e) {
     e.preventDefault();
     const form = new FormData(e.target);
     getData(form)
-    .then(res => {
-      console.log("Response:", res)
-      setResponse(res)
-    });
+      .then(res => {
+        console.log("Response:", res)
+        setResponse(res)
+      });
+  }
+
+  function toggleDarkMode() {
+    const body = document.querySelector("body")
+    body.classList.toggle("dark-mode")
   }
 
   return (
     <div className='mainDiv'>
+      <Switch />
       <h1 className='Title'>GenQuiz</h1>
-      
       <div className="inputDiv">
         <form method="post" action="/process" encType="multipart/form-data" onSubmit={handleSubmit}>
           <p className="LabelInput" id="FirstInput">Project Name:</p>
           <input type="text" name="projectName" id="projectName" placeholder="Insert Project Name Here..." />
-          
+
           <p className="LabelInput">Project Description:</p>
           <label for="file" class="custom-file-upload">
-          <i class="fa fa-cloud-upload"></i> Upload File
+            <i class="fa fa-cloud-upload"></i> Upload File
           </label>
-          <input className='form' type="file" name="file" autoComplete="off" required id="file" type="file"/>
-          
+          <input className='form' type="file" name="file" autoComplete="off" required id="file" type="file" />
+
           <input className='form' type="submit" value="Submit"></input>
         </form>
       </div>
