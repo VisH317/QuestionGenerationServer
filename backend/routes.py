@@ -22,6 +22,12 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+# def get_split_values(pixel_values):
+#     horiz_hist = (torch.sum(torch.sum(pixel_values, 1), 2)/255).reshape(384)
+#     linebreak_idx = [0]
+
+
+
 def OCR(filename):
     image = Image.open(os.path.join('static', filename)).convert('RGB')
     pixel_values = processor(images=image, return_tensors='pt').pixel_values
