@@ -12,10 +12,10 @@ const Switch = ({ isOn, handleToggle, onColor }) => {
         type="checkbox"
       />
       <label
-        style={{ background: isOn && onColor }}
         className="react-switch-label"
         htmlFor={`react-switch-new`}
       >
+        <p className="noselect" id="emoji">&nbsp;🌞&nbsp;&nbsp;&nbsp;&nbsp;🌙</p>
         <span className={`react-switch-button`} />
       </label>
     </>

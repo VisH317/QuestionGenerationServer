@@ -10,8 +10,8 @@
 .Title {
     font-size: 50px;
     position: relative;
-    top: 30px;
     left: 50%;
+    width: 50%;
     text-align: center;
     transform: translateX(-50%);
 }
@@ -97,4 +97,29 @@ input[type=submit]:hover {
     left: 50%;
     transform: translateX(-50%);
     margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+/* ***************************************************************** */
+/* *************************** DARK MODE *************************** */
+/* ***************************************************************** */
+
+.darkMode {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.inputDiv.darkMode {
+    background-color: rgb(66, 66, 66);
+}
+
+form.darkMode {
+    background-color: rgb(66, 66, 66);
+}
+
+.DataShow.darkMode {
+    background-color: rgb(66, 66, 66);
+}
+p.darkMode {
+    background-color: rgb(66, 66, 66);
 }
