@@ -20,6 +20,21 @@
 /* *************************** INPUT FORM ************************** */
 /* ***************************************************************** */
 
+input[type="text"] {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    display: none;
+}
+
 .inputDiv {
     position: relative;
     border-radius: 15px;
@@ -45,19 +60,24 @@ inputDiv.p select {
     margin-top: 0px;
 }
 
-#projectName {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+#pTagText {
+    position: absolute;
+    top: 37%; 
+    left: 30%;
 }
 
-input[type="file"] {
-    display: none;
+#InputText {
+    position: absolute;
+    top: 56%; 
+    left: 30%;
+    width: 68.7%;
+    /* make resizable */
+    overflow-x: hidden;
+    resize: horizontal;
+    display: inline-block;
+
 }
+
 .custom-file-upload {
     border: 1px solid #ccc;
     display: inline-block;
@@ -67,7 +87,6 @@ input[type="file"] {
     position: relative;
     margin-bottom: 20px;
 }
-
 
 input[type=submit] {
     transition: background-color 0.5s; 
