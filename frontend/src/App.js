@@ -9,7 +9,7 @@ function DataShow(response) {
   const json_response = response.json
   let ocr_output_dom = "";
   if (json_response.OCR_output) {
-    ocr_output_dom = <p> OCR_output: &nbsp; {json_response.OCR_output} </p> 
+    ocr_output_dom = <p> OCR Output: &nbsp; {json_response.OCR_output} </p> 
   }
   return (
     <div className="DataShow">
