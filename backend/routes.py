@@ -45,7 +45,7 @@ def get_split_values(image):
 def OCR(filename):
     image = Image.open(os.path.join('static', filename)).convert('RGB')
     idxs = get_split_values(image)
-    passage = ""
+    passage = []
 
     for idx in idxs:
         cropped_image = image.crop((0, idx[0], image.size[0], idx[1]))
@@ -53,11 +53,10 @@ def OCR(filename):
         generated_ids = model.generate(pixel_values)
         passage.append(processor.batch_decode(generated_ids, skip_special_tokens=True)[0])
     
-    return passage
-
-
-
     return " ".join(passage)
+
+
+
 
 def generateQuestions(text):
     PATH = "../MLModel/results/main"

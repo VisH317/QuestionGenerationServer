@@ -51,7 +51,7 @@ function App() {
           <label for="file" class="custom-file-upload">
             <i class="fa fa-cloud-upload"></i> Upload File
           </label>
-          <input className='form' type="file" name="file" autoComplete="off" required id="file" type="file" />
+          <input className='form' type="file" name="file" autoComplete="off" required id="file" />
 
           <input className='form' type="submit" value="Submit"></input>
         </form>
