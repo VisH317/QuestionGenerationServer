@@ -10,8 +10,8 @@
 .Title {
     font-size: 50px;
     position: relative;
-    top: 30px;
     left: 50%;
+    width: 50%;
     text-align: center;
     transform: translateX(-50%);
 }
@@ -19,6 +19,21 @@
 /* ***************************************************************** */
 /* *************************** INPUT FORM ************************** */
 /* ***************************************************************** */
+
+input[type="text"] {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    display: none;
+}
 
 .inputDiv {
     position: relative;
@@ -45,19 +60,24 @@ inputDiv.p select {
     margin-top: 0px;
 }
 
-#projectName {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+#pTagText {
+    position: absolute;
+    top: 37%; 
+    left: 30%;
 }
 
-input[type="file"] {
-    display: none;
+#InputText {
+    position: absolute;
+    top: 56%; 
+    left: 30%;
+    width: 68.7%;
+    /* make resizable */
+    overflow-x: hidden;
+    resize: horizontal;
+    display: inline-block;
+
 }
+
 .custom-file-upload {
     border: 1px solid #ccc;
     display: inline-block;
@@ -68,20 +88,22 @@ input[type="file"] {
     margin-bottom: 20px;
 }
 
-
 input[type=submit] {
+    transition: background-color 0.5s; 
     width: 100%;
     background-color: #4CAF50;
     color: white;
     padding: 14px 25px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 15px;
     cursor: pointer;
+    font-size: 25px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #38903d;
 }
 
 /* ***************************************************************** */
@@ -97,4 +119,29 @@ input[type=submit]:hover {
     left: 50%;
     transform: translateX(-50%);
     margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+/* ***************************************************************** */
+/* *************************** DARK MODE *************************** */
+/* ***************************************************************** */
+
+.darkMode {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.inputDiv.darkMode {
+    background-color: rgb(66, 66, 66);
+}
+
+form.darkMode {
+    background-color: rgb(66, 66, 66);
+}
+
+.DataShow.darkMode {
+    background-color: rgb(66, 66, 66);
+}
+p.darkMode {
+    background-color: rgb(66, 66, 66);
 }

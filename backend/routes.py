@@ -66,9 +66,15 @@ def generateQuestions(text):
     outputs = modelQuestion.generate(input_ids)
     return str(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
+@Routes.route("/processText", methods=['POST'])
+def process_text(): 
+    text = request.form['InputText']
+    questions = generateQuestions(text)
+    return {"question": questions, "OCR_output": ""}
+
 @Routes.route('/process')
 def upload_form():
-    return {"question" : "", "OCR_output" : "", "error" : ""}
+    return {"question" : "", "OCR_output" : ""}
 
 @Routes.route('/process', methods=['POST'])
 def upload_image():
@@ -89,7 +95,7 @@ def upload_image():
         OCR_output = OCR(filename)
         print("Generating Questions:")
         questions = generateQuestions(OCR_output)
-        return {"question" : questions, "OCR_output" : OCR_output, "error" : ""}
+        return {"question" : questions, "OCR_output" : OCR_output}
 
 
 
