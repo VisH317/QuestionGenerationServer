@@ -40,8 +40,6 @@ def get_split_values(image):
     
     return indexes
         
-
-
 def OCR(filename):
     image = Image.open(os.path.join('static', filename)).convert('RGB')
     idxs = get_split_values(image)
@@ -54,9 +52,6 @@ def OCR(filename):
         passage.append(processor.batch_decode(generated_ids, skip_special_tokens=True)[0])
     
     return " ".join(passage)
-
-
-
 
 def generateQuestions(text):
     PATH = "../MLModel/results/main"
