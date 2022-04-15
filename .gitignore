@@ -1,3 +1,5 @@
 flaskr/results/
 flaskr/static/
 venv
+backend/static/
+*.pyc

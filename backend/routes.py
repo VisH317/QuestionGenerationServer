@@ -23,16 +23,16 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-def get_split_values(image):
+def get_split_values(image, treshold=240):
     arr = np.mean(np.array(image), (2,1))
-    linebreak_idx = [0]
+    linebreak_idx = []
     indexes = []
     check_margin_end=True
     for ix,sum in enumerate(arr):
-        if sum<=225 and check_margin_end==True:
+        if sum<=treshold and check_margin_end==True:
             linebreak_idx.append(ix)
-            check_margin_end==False
-        if sum>=225 and check_margin_end==False:
+            check_margin_end=False
+        if sum>=treshold and check_margin_end==False:
             linebreak_idx.append(ix)
             indexes.append(linebreak_idx)
             linebreak_idx = []
@@ -46,10 +46,10 @@ def OCR(filename):
     passage = []
 
     for idx in idxs:
-        cropped_image = image.crop((0, idx[0], image.size[0], idx[1]))
+        cropped_image = image.crop((0, idx[0] - 7, image.size[0], idx[1] + 7))
         pixel_values = processor(images=cropped_image, return_tensors="pt").pixel_values
         generated_ids = model.generate(pixel_values)
-        passage.append(processor.batch_decode(generated_ids, skip_special_tokens=True)[0])
+        passage.append(processor.batch_decode(generated_ids, skip_special_tokens=True)[0])  
     
     return " ".join(passage)
 
