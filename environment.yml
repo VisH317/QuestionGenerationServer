@@ -1,0 +1,15 @@
+name: QuestionGenerationServer
+channels:
+ - defaults
+dependencies:
+ - python=3.8
+ - Flask
+ - pytorch
+ - numpy
+ - transformers
+ - pillow
+ - requests
+ - oauthlib
+ - pyOpenSSL
+ - Flask-Login
+ - psycopg2

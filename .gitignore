@@ -3,3 +3,4 @@ flaskr/static/
 venv
 backend/static/
 *.pyc
+backend/DB/database.ini

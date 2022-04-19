@@ -1,8 +1,19 @@
 import os
 from flask import Flask
-from routes import Routes
+from DB.dbinit import init_db
+from flask_login import LoginManager, current_user
+from oauthlib.oauth2 import WebApplicationClient
+import Keys.dev as keys
+from appinit import app
 
-app = Flask(__name__, instance_relative_config=True, static_url_path="", static_folder="../react-flask-app/build")
+if os.environ["ENV"]=="dev":
+    os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
+
+# routes
+#import Routes.routes as otherRoutes
+from Routes.Auth.GoogleAuth import GoogleRoutes
+
+
 app.config.from_mapping(
     SECRET_KEY='dev',
     DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite')
@@ -11,14 +22,26 @@ app.config.from_mapping(
 app.config['UPLOAD_FOLDER'] = 'static/'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
-app.register_blueprint(Routes)
+with app.app_context():
+    init_db()
 
-# if test_config is None:
-#     app.config.from_pyfile('config.py', silent=True)
-# else:
-#     app.config.from_mapping(test_config)
+#app.register_blueprints(otherRoutes.Routes)
+app.register_blueprint(GoogleRoutes)
 
-# try:
-#     os.makedirs(app.instance_path)
-# except OSError:
-#     pass
+@app.route("/")
+def index():
+    if current_user.is_authenticated:
+        return (
+            "<p>Hello, {}! You're logged in! Email: {}</p>"
+            "<div><p>Google Profile Picture:</p>"
+            '<img src="{}" alt="Google profile pic"></img></div>'
+            '<a class="button" href="/logout">Logout</a>'.format(
+                current_user.name, current_user.email, current_user.profile_pic
+            )
+        )
+    else:
+        return '<a class="button" href="/login">Google Login</a>'
+
+if __name__=='__main__':
+    app.debug=True
+    app.run()
