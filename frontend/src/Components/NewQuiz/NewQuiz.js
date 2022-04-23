@@ -1,4 +1,4 @@
-import "./App.css"
+import "./NewQuiz.css"
 import React from 'react'
 import Switch from './Switch'
 import toggleDarkMode from "./darkMode"
@@ -30,7 +30,7 @@ function handleSubmit(e, setResponse) {
     document.getElementById("submitButton").value = "Processing...";
 
     console.log("text selected")
-    fetch("/processText", {
+    fetch("/api/processText", {
       method: "POST",
       body: form
     })
@@ -47,7 +47,7 @@ function handleSubmit(e, setResponse) {
     document.getElementById("submitButton").value = "Processing...";
 
     console.log("file selected")
-    fetch("/process", {
+    fetch("/api/process", {
       method: "POST",
       body: form
     })
@@ -61,7 +61,7 @@ function handleSubmit(e, setResponse) {
   }
 }
 
-function App() {
+function NewQuiz() {
   const [response, setResponse] = useState([{}])
   const [lightMode, setLightMode] = useState(true)
   return (
@@ -96,4 +96,4 @@ function App() {
   )
 }
 
-export default App
+export default NewQuiz

@@ -61,17 +61,17 @@ def generateQuestions(text):
     outputs = modelQuestion.generate(input_ids)
     return str(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
-@Routes.route("/processText", methods=['POST'])
+@Routes.route("/api/processText", methods=['POST'])
 def process_text(): 
     text = request.form['InputText']
     questions = generateQuestions(text)
     return {"question": questions, "OCR_output": ""}
 
-@Routes.route('/process')
+@Routes.route('/api/process')
 def upload_form():
     return {"question" : "", "OCR_output" : ""}
 
-@Routes.route('/process', methods=['POST'])
+@Routes.route('/api/process', methods=['POST'])
 def upload_image():
     from app import app
     if 'file' not in request.files:

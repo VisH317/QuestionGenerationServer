@@ -1,6 +1,6 @@
 import json
 
-from flask import Flask, redirect, request, Blueprint
+from flask import Flask, redirect, request, Blueprint, jsonify
 import requests
 from flask_login import current_user, login_user, logout_user, login_required, LoginManager
 import Keys.dev as keys
@@ -27,7 +27,7 @@ def get_google_provider_cfg():
 def load_user(user_id):
     return User.get(user_id)
 
-@GoogleRoutes.route('/login')
+@GoogleRoutes.route('/auth/login')
 def login():
     print("test")
     google_provider_cfg = get_google_provider_cfg()
@@ -40,7 +40,7 @@ def login():
     )
     return redirect(request_uri)
 
-@GoogleRoutes.route("/login/callback")
+@GoogleRoutes.route("/auth/login/callback")
 def callback():
     code = request.args.get("code")
     google_provider_cfg = get_google_provider_cfg()
@@ -86,8 +86,21 @@ def callback():
 
     return redirect("/")
 
-@GoogleRoutes.route("/logout")
+@GoogleRoutes.route("/auth/logout")
 @login_required
 def logout():
     logout_user()
     return redirect("/")
+
+@GoogleRoutes.route("/auth/current_user")
+def get_user():
+    if not current_user.is_authenticated:
+        return json.dumps({})
+    else:
+        print("user:",current_user)
+        return jsonify({
+            'id': current_user.id,
+            'name': current_user.name,
+            'email': current_user.email,
+            'profile_pic': current_user.profile_pic
+        })
