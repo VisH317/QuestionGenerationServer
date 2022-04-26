@@ -5,6 +5,7 @@ import { useDispatch, useSelector  } from 'react-redux'
 import { getUser } from '../State/Auth/GoogleAccSlice'
 
 import Landing from './Landing/Landing'
+import Navbar from './Navbar/Navbar'
 
 // import NewQuiz from './NewQuiz/NewQuiz'
 
@@ -22,6 +23,7 @@ const App = () => {
     if(Object.keys(user.value).length===0) {
         return (
             <BrowserRouter>
+                <Navbar/>
                 <Routes>
                     <Route path="/" element={<Landing />} exact/>
                 </Routes>
