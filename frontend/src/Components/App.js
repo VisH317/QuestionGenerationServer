@@ -6,6 +6,7 @@ import { getUser } from '../State/Auth/GoogleAccSlice'
 
 import Landing from './Landing/Landing'
 import Navbar from './Navbar/Navbar'
+import Dashboard from './DashPages/DashBoard/Dashboard'
 
 // import NewQuiz from './NewQuiz/NewQuiz'
 
@@ -29,17 +30,14 @@ const App = () => {
                 </Routes>
             </BrowserRouter>
         )
-    }
-
-    if(Object.keys(user.value).length!==0) {
-        console.log(user)
+    } else {
         return (
-            <div>
-                <p>Poggers ure logged in</p>
-                <p>{user.value.name}</p>
-                <a href="/auth/logout">logout</a>
-            </div>
-            
+            <BrowserRouter>
+                <Navbar/>
+                <Routes>
+                    <Route path="/" element={<Dashboard/>} exact/>
+                </Routes>
+            </BrowserRouter>            
         )
     }
     
