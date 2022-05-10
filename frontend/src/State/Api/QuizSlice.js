@@ -4,7 +4,7 @@ import axios from 'axios'
 export const getQuizzes = createAsyncThunk(
     'quizzes/getQuizzes',
     async (userRef, thunkAPI) => {
-        const res = await axios.get('api/quizzes', {
+        const res = await axios.get('api/quiz', {
             headers:  {
                 'Content-Type': "application/json" 
             },
@@ -20,7 +20,7 @@ export const getQuizzes = createAsyncThunk(
 export const createQuiz = createAsyncThunk(
     'quizzes/createQuiz',
     async (userRef, prompt, question) => {
-        const res = await axios.post('api/quizzes', {
+        const res = await axios.post('api/quiz', {
             headers: {
                 'Content-Type': "application/json"
             },
