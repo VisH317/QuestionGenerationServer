@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import { useDispatch, useSelector  } from 'react-redux'
 
 import { getUser } from '../State/Auth/GoogleAccSlice'
+import { getQuizzes } from '../State/Api/QuizSlice'
 
 import Landing from './Landing/Landing'
 import Navbar from './Navbar/Navbar'
@@ -18,6 +19,7 @@ const App = () => {
 
     useEffect(() => {
         dispatch(getUser())
+        dispatch(getQuizzes())
         console.log('ran')
     }, [dispatch])
 
