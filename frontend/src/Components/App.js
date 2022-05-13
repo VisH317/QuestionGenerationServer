@@ -7,6 +7,8 @@ import { getUser } from '../State/Auth/GoogleAccSlice'
 import Landing from './Landing/Landing'
 import Navbar from './Navbar/Navbar'
 import Dashboard from './DashPages/DashBoard/Dashboard'
+import Quizzes from './DashPages/NewQuiz/Quizzes'
+import NewQuizDummy from './DashPages/NewQuiz/NewQuizDummy'
 
 // import NewQuiz from './NewQuiz/NewQuiz'
 
@@ -36,6 +38,8 @@ const App = () => {
                 <Navbar/>
                 <Routes>
                     <Route path="/" element={<Dashboard/>} exact/>
+                    <Route path="/quiz" element={<Quizzes/>} exact/>
+                    <Route path="/quiz/new" element={<NewQuizDummy/>} exact/>
                 </Routes>
             </BrowserRouter>            
         )

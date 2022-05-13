@@ -4,12 +4,12 @@ import axios from 'axios'
 export const getQuizzes = createAsyncThunk(
     'quizzes/getQuizzes',
     async (userRef, thunkAPI) => {
-        const res = await axios.get('api/quizzes', {
+        const res = await axios.get('/api/quiz', {
             headers:  {
                 'Content-Type': "application/json" 
             },
             params: {
-                userRef
+                userref: userRef
             }  
         })
 
@@ -17,23 +17,20 @@ export const getQuizzes = createAsyncThunk(
     }
 )
 
-export const createQuiz = createAsyncThunk(
-    'quizzes/createQuiz',
-    async (userRef, prompt, question) => {
-        const res = await axios.post('api/quizzes', {
-            headers: {
-                'Content-Type': "application/json"
-            },
-            data: { userRef, prompt, question }
-        })
+export const createQuiz = async (userRef, prompt, question) => {
+    console.log("yes")
+    const res = await axios.post('/api/quiz/new', {
+        headers: {
+            'Content-Type': "application/json"
+        },
+        data: { userRef, prompt, question }
+    })
 
-        return res.data
-    }
-)
+    return res.data
+}
 
 const initialState = {
     status: 'idle',
-    createStatus: 'idle',
     value: []
 } 
 
@@ -46,20 +43,11 @@ const quizSlice = createSlice({
             state.status = 'pending'
         })
             .addCase(getQuizzes.fulfilled, (state, action) => {
-                state.status = 'idle',
+                state.status = 'idle'
                 state.value = action.payload
             })
             .addCase(getQuizzes.rejected, (state, action) => {
                 state.status = 'rejected'
-            })
-            .addCase(createQuiz.pending, (state, action) => {
-                state.createStatus = 'pending'
-            })
-            .addCase(createQuiz.fulfilled, (state, action) => {
-                state.createStatus = 'idle'
-            })
-            .addCase(createQuiz.rejected, (state, action) => {
-                state.createStatus = 'rejected'
             })
     }
 })
