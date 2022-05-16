@@ -39,7 +39,7 @@ def get_split_values(image, treshold=240):
             check_margin_end=True
     
     return indexes
-        
+
 def OCR(filename):
     image = Image.open(os.path.join('static', filename)).convert('RGB')
     idxs = get_split_values(image)

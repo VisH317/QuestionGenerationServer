@@ -5,5 +5,13 @@
 }
 
 .navlink-container {
+    padding: 5px;
+    border-radius: 10px;
     margin-right: 60px;
+    transition: 0.3s;
 }
+
+.navlink-container:hover {
+    background-color: rgb(59, 59, 59);
+}
+

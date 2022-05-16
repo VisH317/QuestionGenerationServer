@@ -7,12 +7,11 @@ import Keys.dev as keys
 from appinit import app
 
 if os.environ["ENV"]=="dev":
-    os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
+    os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1' 
 
 # routes
 #import Routes.routes as otherRoutes
 from Routes.Auth.GoogleAuth import GoogleRoutes
-
 
 app.config.from_mapping(
     SECRET_KEY='dev',
@@ -20,7 +19,7 @@ app.config.from_mapping(
 )
 
 app.config['UPLOAD_FOLDER'] = 'static/'
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024 
 
 with app.app_context():
     init_db()

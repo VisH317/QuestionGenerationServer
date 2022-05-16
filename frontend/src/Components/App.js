@@ -9,6 +9,9 @@ import Navbar from './Navbar/Navbar'
 
 // import NewQuiz from './NewQuiz/NewQuiz'
 
+// What is the use of "NavLink"? Wouldn't it be just better just to write the full form?
+//     - Why don't we use react-router-dom's link instead of <a href>
+
 const App = () => {
 
     const dispatch = useDispatch()
@@ -42,7 +45,7 @@ const App = () => {
             
         )
     }
-    
 }
 
 export default App
+
