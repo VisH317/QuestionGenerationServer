@@ -16,6 +16,8 @@ def init_db():
 
         with current_app.open_resource("DB/Schemas/GoogleSchema.sql") as f:
             cur.execute(f.read().decode("utf8"))
+        with current_app.open_resource("DB/Schemas/QuizSchema.sql") as f:
+            cur.execute(f.read().decode('utf8'))
         conn.commit()
         cur.close()
         conn.close()

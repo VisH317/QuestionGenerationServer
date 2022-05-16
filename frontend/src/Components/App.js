@@ -3,9 +3,13 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 import { useDispatch, useSelector  } from 'react-redux'
 
 import { getUser } from '../State/Auth/GoogleAccSlice'
+import { getQuizzes } from '../State/Api/QuizSlice'
 
 import Landing from './Landing/Landing'
 import Navbar from './Navbar/Navbar'
+import Dashboard from './DashPages/DashBoard/Dashboard'
+import Quizzes from './DashPages/NewQuiz/Quizzes'
+import NewQuizDummy from './DashPages/NewQuiz/NewQuizDummy'
 
 // import NewQuiz from './NewQuiz/NewQuiz'
 
@@ -18,6 +22,7 @@ const App = () => {
 
     useEffect(() => {
         dispatch(getUser())
+        dispatch(getQuizzes())
         console.log('ran')
     }, [dispatch])
 
@@ -32,17 +37,16 @@ const App = () => {
                 </Routes>
             </BrowserRouter>
         )
-    }
-
-    if(Object.keys(user.value).length!==0) {
-        console.log(user)
+    } else {
         return (
-            <div>
-                <p>Poggers ure logged in</p>
-                <p>{user.value.name}</p>
-                <a href="/auth/logout">logout</a>
-            </div>
-            
+            <BrowserRouter>
+                <Navbar/>
+                <Routes>
+                    <Route path="/" element={<Dashboard/>} exact/>
+                    <Route path="/quiz" element={<Quizzes/>} exact/>
+                    <Route path="/quiz/new" element={<NewQuizDummy/>} exact/>
+                </Routes>
+            </BrowserRouter>            
         )
     }
 }

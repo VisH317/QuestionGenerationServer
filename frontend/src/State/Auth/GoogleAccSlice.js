@@ -4,7 +4,7 @@ import axios from 'axios'
 export const getUser = createAsyncThunk(
     'users/getUser',
     async (thunkAPI) => {
-        const res = await axios.get('auth/current_user')
+        const res = await axios.get('/auth/current_user')
         return res.data
     }
 )
