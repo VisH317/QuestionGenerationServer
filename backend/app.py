@@ -26,6 +26,7 @@ with app.app_context():
 
 #app.register_blueprints(otherRoutes.Routes)
 app.register_blueprint(GoogleRoutes)
+print(app.url_map)
 
 # test routes
 @app.route('/auth/test')

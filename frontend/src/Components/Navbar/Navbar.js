@@ -9,7 +9,7 @@ const Navbar = () => {
     
     const { user } = useSelector(state=>state)
 
-    if(Object.keys(user.value).length===0) {
+    if (Object.keys(user.value).length===0) {
         return (
             <div className="navbar-container">
                 <Logo/>

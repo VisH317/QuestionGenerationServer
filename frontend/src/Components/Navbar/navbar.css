@@ -1,5 +1,5 @@
 .navbar-container {
-    width: 100%;
+    width: 100%; 
     height: 75px;
     display: flex;
     background-color: #111;
@@ -9,19 +9,11 @@
     padding-left: 10px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: lighter;
+    flex-direction: row; 
 }
 
 .right {
-    margin-left: auto; 
     position: relative;
     right: 0;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+    margin-left: auto; 
 }
-
-.AboutUs {
-    margin-left: 25%; 
-    margin-right: 0; 
-}
- 
