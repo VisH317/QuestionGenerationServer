@@ -37,7 +37,7 @@ const Demo = props => {
                         typewriter.changeDelay(10)
                         typewriter
                         .pauseFor(500)
-                        .typeString('How many civilians died from military occupation, bombardment, hunger, and disease?')
+                        .typeString('What was the first war?')
                         .start()
                     }} 
                 /> 

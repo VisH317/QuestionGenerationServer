@@ -8,8 +8,6 @@ import torch
 import logging
 import numpy as np
 
-# make sure you delete this later during production
-logging.basicConfig(level=logging.DEBUG)
 
 processor = TrOCRProcessor.from_pretrained('microsoft/trocr-base-handwritten')
 model = VisionEncoderDecoderModel.from_pretrained("microsoft/trocr-base-handwritten")
@@ -61,20 +59,12 @@ def generateQuestions(text):
     outputs = modelQuestion.generate(input_ids)
     return str(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
-@Routes.route("/api/processText", methods=['POST', 'GET'])
+@Routes.route("/api/processText", methods=['POST'])
 def process_text(): 
     text = request.form['InputText']
     print("Got text: " + text)
     questions = generateQuestions(text)
     return {"question": questions, "OCR_output": ""}
-
-@Routes.route('/api/processText')
-def upload_form():
-    return {"question" : "", "OCR_output" : ""}
-
-@Routes.route('/api/process')
-def upload_form():
-    return {"question" : "", "OCR_output" : ""}
 
 @Routes.route('/api/process', methods=['POST'])
 def upload_image():

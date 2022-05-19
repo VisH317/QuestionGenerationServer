@@ -6,11 +6,12 @@ function demoClick (button, resultParagraph, prompt) {
     // Create form
 
     var form = new FormData()
-    form.append("json", JSON.stringify({"InputText": prompt.innerHTML}))
+    console.log("Test: " + prompt.value)
+    form.append("InputText", prompt.value)
 
     fetch("/api/processText", {
       method: "POST",
-      body: form 
+      body: form
     })
     .then(res => res.json())
     .then(res => {

@@ -5,6 +5,7 @@ from flask_login import LoginManager, current_user
 from oauthlib.oauth2 import WebApplicationClient
 import Keys.dev as keys
 from appinit import app
+from Routes import routes
 
 if os.environ["ENV"]=="dev":
     os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1' 
@@ -24,7 +25,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 with app.app_context():
     init_db()
 
-#app.register_blueprints(otherRoutes.Routes)
+app.register_blueprint(routes.Routes)
 app.register_blueprint(GoogleRoutes)
 print(app.url_map)
 
