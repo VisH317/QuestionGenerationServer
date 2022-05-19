@@ -62,7 +62,6 @@ def generateQuestions(text):
 @Routes.route("/api/processText", methods=['POST'])
 def process_text(): 
     text = request.form['InputText']
-    print("Got text: " + text)
     questions = generateQuestions(text)
     return {"question": questions, "OCR_output": ""}
 

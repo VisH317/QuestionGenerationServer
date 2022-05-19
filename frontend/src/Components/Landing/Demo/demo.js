@@ -58,8 +58,33 @@ const Demo = props => {
         }
     }
 
+    // change_demo_begin(!demo_begin);
+    // set_answer_demo_display(false);
+
+    function toggleButton (demo_begin) {
+        if (demo_begin === true) {
+            return (
+                <button id="ToggleDemo" onClick={(self) => {
+                    change_demo_begin(!demo_begin)
+                    set_answer_demo_display(false)
+                }}>
+                Hide Demo
+                </button>
+            )
+        } else {
+            return (
+                <button id="ToggleDemo" onClick={(self) => {
+                    change_demo_begin(!demo_begin)
+                    set_answer_demo_display(false)
+                }}>
+                Show Demo
+                </button>
+            ) 
+        }
+    }
+
     return (
-        <div id="demoDiv" onClick={() => change_demo_begin(true)}>
+        <div id="demoDiv">
             <div id="blueDiv">
                 <h1 id="Title">GenQ</h1>
                 <p id="Description">An AI-powered flashcard system</p>
@@ -73,6 +98,8 @@ const Demo = props => {
                 </h3> 
 
                 {questionResponse(answer_demo_display, demo_begin)}
+
+                {toggleButton(demo_begin)} 
             </div>
         </div>
     )
