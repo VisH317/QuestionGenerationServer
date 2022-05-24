@@ -17,8 +17,9 @@
     "react-scripts": "5.0.0",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
-    "web-vitals": "^2.1.4", 
-    "typewriter-effect": "^2.18.2"
+    "typewriter-effect": "^2.18.2",
+    "wait-on": "^6.0.1",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

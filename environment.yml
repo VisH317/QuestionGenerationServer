@@ -13,5 +13,4 @@ dependencies:
  - pyOpenSSL
  - Flask-Login
  - psycopg2
- - aioflask
   

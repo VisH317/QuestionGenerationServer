@@ -9,7 +9,7 @@ export const getQuizzes = createAsyncThunk(
                 'Content-Type': "application/json" 
             },
             params: {
-                userref: userRef
+                userref: String(userRef)
             }  
         })
 

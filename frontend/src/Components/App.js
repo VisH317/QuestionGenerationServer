@@ -8,7 +8,7 @@ import { getQuizzes } from '../State/Api/QuizSlice'
 import Landing from './Landing/Landing'
 import Navbar from './Navbar/Navbar'
 import Dashboard from './DashPages/DashBoard/Dashboard'
-import Quizzes from './DashPages/NewQuiz/Quizzes'
+import Quizzes from './DashPages/Quizzes/Quizzes'
 import NewQuizDummy from './DashPages/NewQuiz/NewQuizDummy'
 
 // import NewQuiz from './NewQuiz/NewQuiz'
@@ -19,14 +19,19 @@ import NewQuizDummy from './DashPages/NewQuiz/NewQuizDummy'
 const App = () => {
 
     const dispatch = useDispatch()
+    const { user } = useSelector(state=>state)
 
     useEffect(() => {
-        dispatch(getUser())
-        dispatch(getQuizzes())
-        console.log('ran')
-    }, [dispatch])
-
-    const { user } = useSelector(state=>state)
+        const func = async () => {
+            if(Object.keys(user.value).length!==0) {
+                console.log(user.value.id)
+                dispatch(getQuizzes(user.value.id))
+            } else {
+                dispatch(getUser())
+            }
+        }
+        func()
+    }, [user, dispatch])
 
     if(Object.keys(user.value).length===0) {
         return (

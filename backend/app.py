@@ -4,15 +4,18 @@ from DB.dbinit import init_db
 from flask_login import LoginManager, current_user
 from oauthlib.oauth2 import WebApplicationClient
 import Keys.dev as keys
+import logging
 from appinit import app
-from Routes import routes
+#from Routes import routes
 
 if os.environ["ENV"]=="dev":
     os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1' 
+    logging.basicConfig(level=logging.DEBUG)
 
 # routes
 #import Routes.routes as otherRoutes
 from Routes.Auth.GoogleAuth import GoogleRoutes
+from Routes.Api.quizzes import QuizRoutes
 
 app.config.from_mapping(
     SECRET_KEY='dev',
@@ -25,9 +28,9 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 with app.app_context():
     init_db()
 
-app.register_blueprint(routes.Routes)
+#app.register_blueprint(routes.Routes)
 app.register_blueprint(GoogleRoutes)
-print(app.url_map)
+app.register_blueprint(QuizRoutes)
 
 # test routes
 @app.route('/auth/test')
